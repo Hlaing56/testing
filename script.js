@@ -13,3 +13,16 @@ $(".mark").on("click", function(event) {
     localStorage.setItem("bookmarked", JSON.stringify(book));
 });
 
+// let btnClass = document.querySelector(".btn");
+// let aTagClass = document.querySelector(".aTag");
+
+// let bttn = btnClass.map(function () {
+//     return this.id;
+// }).get();
+
+
+
+let bttn = $(".btn").map(function () {
+    return this.id; //create array with all timeValue id
+}).get();
+console.log(bttn);
