@@ -1,28 +1,23 @@
-var book= [];
+var book = [];
 
-$(".mark").on("click", function(event) {
-    var element = event.target;
-    console.log(element);
-    var link = element.getAttribute('href');
-    var title = element.text;
+// $(".btn").on("click", function (e) {
+//     var link = e.target.nextElementSibling.getAttribute("href");
+//     var title = e.target.nextElementSibling.text;
+//     book.push({
+//     link,
+//     title,
+//     });
+//     localStorage.setItem("bookmarked", JSON.stringify(book));
+// });
+
+let btnClass = document.getElementsByClassName("btn");
+
+btnClass.addEventListener("click", function (e){
+    var link = e.target.nextElementSibling.getAttribute("href");
+    var title = e.target.nextElementSibling.text;
     book.push({
-        link,
-        title
-    })
-    console.log(book);
+    link,
+    title,
+    });
     localStorage.setItem("bookmarked", JSON.stringify(book));
-});
-
-// let btnClass = document.querySelector(".btn");
-// let aTagClass = document.querySelector(".aTag");
-
-// let bttn = btnClass.map(function () {
-//     return this.id;
-// }).get();
-
-
-
-let bttn = $(".btn").map(function () {
-    return this.id; //create array with all timeValue id
-}).get();
-console.log(bttn);
+})
